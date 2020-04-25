@@ -1,46 +1,19 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import get from 'lodash/get'
-import Helmet from 'react-helmet'
-
 import Layout from '../../components/Layout'
-import { rhythm } from '../../utils/typography'
+import { BlogPostListItem } from '../../components/BlogPostListItem'
 
 class BlogIndex extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const siteDescription = get(
-      this,
-      'props.data.site.siteMetadata.description'
-    )
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <Helmet
-          htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'description', content: siteDescription }]}
-          title={`Blog | ${siteTitle}`}
-        />
+      <Layout site={this.props.data.site}>
         <h2>Blog</h2>
-        {posts.map(({ node }) => {
-          const title = get(node, 'frontmatter.title') || node.frontmatter.path
-          return (
-            <div key={node.frontmatter.path}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: 'none' }} to={node.frontmatter.path}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          )
-        })}
+        {posts.map(({ node }) => (
+          <BlogPostListItem key={node.frontmatter.path} node={node} />
+        ))}
       </Layout>
     )
   }

@@ -1,11 +1,15 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 
-import Bio from '../components/Bio'
+import profilePic from './../assets/images/avatar.jpeg'
+import bioData from './../data/bio'
 import Layout from '../components/Layout'
 import { rhythm, scale } from '../utils/typography'
+
+import 'typeface-montserrat'
+import 'typeface-merriweather'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -40,7 +44,19 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <Bio />
+        <div style={{ display: 'flex', marginBottom: rhythm(2.5) }}>
+          <img
+            src={profilePic}
+            alt={`Daniel Whiffing`}
+            style={{
+              marginRight: rhythm(1 / 2),
+              marginBottom: 0,
+              width: rhythm(2),
+              height: rhythm(2),
+            }}
+          />
+          <p>{bioData}</p>
+        </div>
         <ul
           style={{
             display: 'flex',
