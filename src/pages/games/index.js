@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 import Layout from '../../components/Layout'
 import data from '../../data/games'
 import { ProjectList } from '../../components/ProjectList'
@@ -8,7 +8,11 @@ class GamesIndex extends React.Component {
   render() {
     return (
       <Layout title="Games" site={this.props.data.site}>
-        <ProjectList label="Games" data={data} />
+        <ProjectList
+          items={data}
+          numPerRow={3}
+          onClick={(project) => navigate('/games/view', { state: project })}
+        />
       </Layout>
     )
   }

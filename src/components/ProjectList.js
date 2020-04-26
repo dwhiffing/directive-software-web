@@ -1,43 +1,87 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import { Grid, Row, Col } from 'react-flexbox-grid'
+import { Box, ButtonBase, Typography } from '@material-ui/core'
 
-export function ProjectList({ data }) {
+export function ProjectList({ items, numPerRow, onClick }) {
+  const numExtra = numPerRow - (items.length % numPerRow)
+  const extra = new Array(numExtra === numPerRow ? 0 : numExtra).fill('')
+
   return (
-    <div>
-      <h2>Games</h2>
-      <br />
-      <div style={{ textAlign: 'center' }}>
-        <Grid fluid>
-          <Row>
-            {data.map(p => (
-              <Col xs={12} sm={12} md={6} lg={6} key={p.title}>
-                <Link to={'/games/view'} state={p} key={p.title}>
-                  <div
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: 250,
-                        height: 200,
-                        margin: 10,
-                        background: `url(${p.image})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center center',
-                      }}
-                    />
-                    <p>{p.title}</p>
-                  </div>
-                </Link>
-              </Col>
-            ))}
-          </Row>
-        </Grid>
-      </div>
-    </div>
+    <Box
+      display="flex"
+      flexWrap={{ xs: 'no-wrap', md: 'wrap' }}
+      flex={1}
+      flexDirection={{ xs: 'column', md: 'row' }}
+    >
+      {[...items, ...extra].map((project, index) => (
+        <ProjectListItem
+          key={index}
+          numPerRow={numPerRow}
+          image={project.image}
+          label={project.title}
+          onClick={() => onClick(project)}
+          // description="description"
+        />
+      ))}
+    </Box>
+  )
+}
+
+export function ProjectListItem({
+  image,
+  label,
+  description,
+  onClick,
+  ratio = '56.25%',
+  numPerRow = 3,
+  style = {},
+}) {
+  if (!label && !image) {
+    return (
+      <Box
+        flex={`${90 / numPerRow}%`}
+        mr={{ xs: 0, md: 2 }}
+        mb={{ xs: 2, md: 2 }}
+      />
+    )
+  }
+  return (
+    <Box
+      clone
+      flex={{ xs: 1, md: `${90 / numPerRow}%` }}
+      position="relative"
+      bgcolor="gray"
+      mr={{ xs: 0, md: 2 }}
+      mb={{ xs: 2, md: 2 }}
+      style={{
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundImage: image ? `url(${image})` : '',
+        ...style,
+      }}
+    >
+      <ButtonBase onClick={onClick}>
+        <Box height={0} paddingBottom={ratio}>
+          {label && (
+            <Box
+              position="absolute"
+              bottom={0}
+              right={0}
+              left={0}
+              px={2}
+              py={1}
+              textAlign="left"
+              bgcolor="rgba(0,0,0,0.5)"
+            >
+              <Typography style={{ color: 'white' }}>{label}</Typography>
+              {description && (
+                <Typography style={{ color: 'white' }}>
+                  {description}
+                </Typography>
+              )}
+            </Box>
+          )}
+        </Box>
+      </ButtonBase>
+    </Box>
   )
 }

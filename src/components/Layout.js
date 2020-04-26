@@ -1,76 +1,82 @@
 import React from 'react'
 import get from 'lodash/get'
-import { rhythm } from '../utils/typography'
 import { Helmet } from 'react-helmet'
-import { Link } from 'gatsby'
+import { Box, Container, Link, MuiThemeProvider } from '@material-ui/core'
+import { theme } from './theme'
+import logo from '../assets/type-logo.png'
 
 class Layout extends React.Component {
   render() {
     const { children, title, site } = this.props
-    const importedStyle = this.props.style
-    const defaultStyle = {
-      marginLeft: 'auto',
-      marginRight: 'auto',
-      maxWidth: rhythm(32),
-      padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-    }
-
-    const finalStyle = {
-      ...defaultStyle,
-      ...importedStyle,
-    }
-
     const siteDescription = get(site, 'siteMetadata.description')
     const siteTitle = get(site, 'siteMetadata.title')
 
     return (
-      <div style={finalStyle}>
-        <Helmet
-          htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'description', content: siteDescription }]}
-          title={`${siteTitle}${title ? ` | ${title}` : ''}`}
-        />
-        <div
+      <MuiThemeProvider theme={theme}>
+        <Container
           style={{
-            width: '100%',
             display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
+            flexDirection: 'column',
+            minHeight: '100vh',
+            maxWidth: 1200,
+            ...this.props.style,
           }}
         >
-          <div
-            style={{
-              width: rhythm(24),
-              maxWidth: 400,
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-            }}
+          <Helmet
+            htmlAttributes={{ lang: 'en' }}
+            meta={[{ name: 'description', content: siteDescription }]}
+            title={`${siteTitle}${title ? ` | ${title}` : ''}`}
+          />
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            flexDirection="column"
+            flex={1}
           >
-            <Link to={'/'}>Home</Link>
-            {/* <Link to={'/apps'}>Apps</Link> */}
-            <Link to={'/games'}>Games</Link>
-            <Link to={'/contact'}>Contact</Link>
-            {/* <Link to={'/blog'}>Blog</Link> */}
-          </div>
-        </div>
-        <br />
-        {children}
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            fontSize: 10,
-            textTransform: 'uppercase',
-            letterSpacing: 2,
-            color: 'gray',
-            paddingTop: 15,
-          }}
-        >
-          Directive Software
-        </div>
-      </div>
+            <Box>
+              <Box
+                width="100%"
+                py={4}
+                display="flex"
+                alignItems="center"
+                justifyContent="space-between"
+                mx="auto"
+              >
+                <Box flex={3}>
+                  <img height={50} src={logo} style={{ marginBottom: 0 }} />
+                </Box>
+
+                <Box
+                  flex={1}
+                  minWidth={180}
+                  display="flex"
+                  justifyContent="space-between"
+                >
+                  <Link href={'/'}>Home</Link>
+                  {/* <Link href={'/apps'}>Apps</Link> */}
+                  <Link href={'/games'}>Games</Link>
+                  <Link href={'/contact'}>Contact</Link>
+                  {/* <Link href={'/blog'}>Blog</Link> */}
+                </Box>
+              </Box>
+
+              {children}
+            </Box>
+            <Box
+              display="flex"
+              py={2}
+              style={{
+                textTransform: 'uppercase',
+                letterSpacing: 2,
+                fontSize: 11,
+                color: 'gray',
+              }}
+            >
+              © DIRECTIVE SOFTWARE | 2020
+            </Box>
+          </Box>
+        </Container>
+      </MuiThemeProvider>
     )
   }
 }
