@@ -53,7 +53,7 @@ class Layout extends React.Component {
                   justifyContent="space-between"
                 >
                   <Link href={'/'}>Home</Link>
-                  {/* <Link href={'/apps'}>Apps</Link> */}
+                  <Link href={'/apps'}>Apps</Link>
                   <Link href={'/games'}>Games</Link>
                   <Link href={'/contact'}>Contact</Link>
                   {/* <Link href={'/blog'}>Blog</Link> */}
