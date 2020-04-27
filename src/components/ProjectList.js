@@ -20,7 +20,7 @@ export function ProjectList({ items, numPerRow, onClick }) {
           label={project.title}
           description={project.year}
           index={index}
-          onClick={() => onClick(project)}
+          onClick={() => onClick(project, index)}
         />
       ))}
     </Box>

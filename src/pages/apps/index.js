@@ -11,7 +11,9 @@ class GamesIndex extends React.Component {
         <ProjectList
           items={data}
           numPerRow={3}
-          onClick={(project) => navigate('/apps/view', { state: project })}
+          onClick={(project, index) =>
+            navigate('/apps/view', { state: { project, data, index } })
+          }
         />
       </Layout>
     )

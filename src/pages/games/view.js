@@ -5,9 +5,16 @@ import { ProjectView } from '../../components/ProjectView'
 
 export class view extends Component {
   render() {
+    const { project, data = [], index = 0 } = this.props.location.state
     return (
       <Layout site={this.props.data.site}>
-        <ProjectView backUri="/games" project={this.props.location.state} />
+        <ProjectView
+          label="Games"
+          backUri="/games"
+          project={project}
+          data={data}
+          index={index}
+        />
       </Layout>
     )
   }
