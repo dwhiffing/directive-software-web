@@ -18,8 +18,9 @@ export function ProjectList({ items, numPerRow, onClick }) {
           numPerRow={numPerRow}
           image={project.image}
           label={project.title}
+          description={project.year}
+          index={index}
           onClick={() => onClick(project)}
-          // description="description"
         />
       ))}
     </Box>
@@ -31,16 +32,18 @@ export function ProjectListItem({
   label,
   description,
   onClick,
-  ratio = '56.25%',
+  index,
+  ratio = '66.66%',
   numPerRow = 3,
   style = {},
 }) {
+  const spacing = 2
   if (!label && !image) {
     return (
       <Box
         flex={`${90 / numPerRow}%`}
-        mr={{ xs: 0, md: 2 }}
-        mb={{ xs: 2, md: 2 }}
+        mr={{ xs: 0, md: spacing }}
+        mb={{ xs: spacing, md: spacing }}
       />
     )
   }
@@ -50,8 +53,11 @@ export function ProjectListItem({
       flex={{ xs: 1, md: `${90 / numPerRow}%` }}
       position="relative"
       bgcolor="gray"
-      mr={{ xs: 0, md: 2 }}
-      mb={{ xs: 2, md: 2 }}
+      mr={{
+        xs: 0,
+        md: index > 0 && (index + 1) % numPerRow === 0 ? 0 : spacing,
+      }}
+      mb={{ xs: spacing, md: spacing }}
       style={{
         backgroundPosition: 'center',
         backgroundSize: 'cover',
@@ -69,8 +75,10 @@ export function ProjectListItem({
               left={0}
               px={2}
               py={1}
+              justifyContent="space-between"
               textAlign="left"
-              bgcolor="rgba(0,0,0,0.5)"
+              display="flex"
+              bgcolor="rgba(0,0,0,0.7)"
             >
               <Typography style={{ color: 'white' }}>{label}</Typography>
               {description && (
