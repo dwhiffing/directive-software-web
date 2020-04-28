@@ -38,7 +38,7 @@ class SiteIndex extends React.Component {
           />
         </Box>
 
-        <Box py={4} display="flex">
+        {/* <Box py={4} display="flex">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. At augue
@@ -46,7 +46,7 @@ class SiteIndex extends React.Component {
             in cursus turpis. Blandit volutpat maecenas volutpat blandit aliquam
             etiam. Sagittis purus sit amet volutpat.
           </p>
-        </Box>
+        </Box> */}
       </Layout>
     )
   }

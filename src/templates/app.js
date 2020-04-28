@@ -1,16 +1,23 @@
 import React, { Component } from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../../components/Layout'
-import { ProjectView } from '../../components/ProjectView'
+import slugify from 'slugify'
+import Layout from '../components/Layout'
+import { ProjectView } from '../components/ProjectView'
+import { data } from '../data/apps'
 
 export class view extends Component {
   render() {
-    const { project, data = [], index = 0 } = this.props.location.state
+    const { path } = this.props
+    const title = path.split('/')[2]
+    const index = data.findIndex(
+      (p) => slugify(p.title).toLowerCase() === title
+    )
+    const project = data[index]
     return (
       <Layout site={this.props.data.site}>
         <ProjectView
-          label="Games"
-          backUri="/games"
+          label="Apps"
+          backUri="/apps"
           project={project}
           data={data}
           index={index}

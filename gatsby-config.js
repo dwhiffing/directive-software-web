@@ -49,8 +49,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-minimal-portfolio-blog`,
-        short_name: `gmpb`,
+        name: `directive-software`,
+        short_name: `directive`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,

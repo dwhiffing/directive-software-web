@@ -2,35 +2,39 @@ const _ = require('lodash')
 const Promise = require('bluebird')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
+const { blogQuery } = require('./src/utils/blogQuery')
+const { data: gameData } = require('./src/data/games')
+const { data: appData } = require('./src/data/apps')
+const slugify = require('slugify')
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
+    const game = path.resolve('./src/templates/game.js')
+    gameData.forEach(({ title }) => {
+      createPage({
+        path: `/games/${slugify(title).toLowerCase()}`,
+        component: game,
+        context: {
+          title: slugify(title).toLowerCase(), // send this to the component itself as a prop
+        },
+      })
+    })
+    const app = path.resolve('./src/templates/app.js')
+    appData.forEach(({ title }) => {
+      createPage({
+        path: `/apps/${slugify(title).toLowerCase()}`,
+        component: app,
+        context: {
+          title: slugify(title).toLowerCase(), // send this to the component itself as a prop
+        },
+      })
+    })
+
     const blogPost = path.resolve('./src/templates/blog-post.js')
     resolve(
-      graphql(
-        `
-          {
-            allMarkdownRemark(
-              sort: { fields: [frontmatter___date], order: DESC }
-              limit: 1000
-            ) {
-              edges {
-                node {
-                  fields {
-                    slug
-                  }
-                  frontmatter {
-                    title
-                    path
-                  }
-                }
-              }
-            }
-          }
-        `
-      ).then(result => {
+      graphql(blogQuery).then((result) => {
         if (result.errors) {
           console.log(result.errors)
           reject(result.errors)

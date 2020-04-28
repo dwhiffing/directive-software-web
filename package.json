@@ -3,6 +3,7 @@
   "description": "Directive Software site",
   "version": "1.0.0",
   "author": "Daniel Whiffing",
+  "homepage": "https://directive.software/",
   "scripts": {
     "dev": "gatsby develop",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
@@ -11,7 +12,7 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "gatsby build --prefix-paths && echo \"directive.software\" > public/CNAME && gh-pages -d public",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
   },
   "dependencies": {
@@ -33,6 +34,7 @@
     "gatsby-source-filesystem": "^2.2.5",
     "gatsby-transformer-remark": "^2.7.5",
     "gatsby-transformer-sharp": "^2.4.7",
+    "jss-increase-specificity": "^0.3.5",
     "lodash": "^4.17.15",
     "prismjs": "^1.20.0",
     "react": "^16.13.1",
@@ -40,6 +42,7 @@
     "react-flexbox-grid": "^2.1.2",
     "react-helmet": "^6.0.0",
     "react-typography": "^0.16.19",
+    "slugify": "^1.4.0",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75",
     "typography": "^0.16.19",
@@ -51,7 +54,6 @@
     "gh-pages": "^2.2.0",
     "prettier": "^2.0.5"
   },
-  "homepage": "",
   "keywords": [],
   "license": "MIT",
   "main": "n/a"

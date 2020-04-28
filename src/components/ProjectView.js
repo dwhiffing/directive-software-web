@@ -1,6 +1,7 @@
 import React from 'react'
 import { navigate, Link } from 'gatsby'
-import { Box, Typography, Button } from '@material-ui/core'
+import { Box, Typography } from '@material-ui/core'
+import slugify from 'slugify'
 
 export const ProjectView = ({
   label,
@@ -12,13 +13,9 @@ export const ProjectView = ({
   const nextIndex = index + 1 >= data.length ? 0 : index + 1
   const prevIndex = index - 1 < 0 ? data.length - 1 : index - 1
   const next = () =>
-    navigate(`${backUri}/view`, {
-      state: { project: data[nextIndex], data, index: nextIndex },
-    })
+    navigate(`${backUri}/${slugify(data[nextIndex].title).toLowerCase()}`)
   const previous = () =>
-    navigate(`${backUri}/view`, {
-      state: { project: data[prevIndex], data, index: prevIndex },
-    })
+    navigate(`${backUri}/${slugify(data[prevIndex].title).toLowerCase()}`)
 
   if (!project) {
     return null
@@ -52,11 +49,16 @@ export const ProjectView = ({
       <Box
         my={2}
         display="flex"
-        flexDirection={{ xs: 'column', md: 'row' }}
+        flexDirection={{ xs: 'column', sm: 'row' }}
         alignItems="center"
       >
         <Typography component="a" href={project.website} target="_new">
-          <img width={500} src={project.image} />
+          <img
+            width={500}
+            src={require(`./../assets/images/${slugify(
+              project.title
+            ).toLowerCase()}.png`)}
+          />
         </Typography>
         <Box my={2} mx={2}>
           <Typography>{project.description}</Typography>

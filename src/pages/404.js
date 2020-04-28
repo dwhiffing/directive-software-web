@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
 class NotFoundPage extends React.Component {
@@ -12,3 +13,14 @@ class NotFoundPage extends React.Component {
 }
 
 export default NotFoundPage
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+  }
+`

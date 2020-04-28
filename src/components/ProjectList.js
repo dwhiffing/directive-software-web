@@ -1,22 +1,23 @@
 import React from 'react'
+import slugify from 'slugify'
 import { Box, ButtonBase, Typography } from '@material-ui/core'
 
-export function ProjectList({ items, numPerRow, onClick }) {
+export function ProjectList({ items = [], numPerRow = 3, onClick }) {
   const numExtra = numPerRow - (items.length % numPerRow)
   const extra = new Array(numExtra === numPerRow ? 0 : numExtra).fill('')
 
   return (
     <Box
       display="flex"
-      flexWrap={{ xs: 'no-wrap', md: 'wrap' }}
+      flexWrap={{ xs: 'no-wrap', sm: 'wrap' }}
       flex={1}
-      flexDirection={{ xs: 'column', md: 'row' }}
+      mr={-2}
+      flexDirection={{ xs: 'column', sm: 'row' }}
     >
       {[...items, ...extra].map((project, index) => (
         <ProjectListItem
           key={index}
           numPerRow={numPerRow}
-          image={project.image}
           label={project.title}
           description={project.year}
           index={index}
@@ -37,31 +38,29 @@ export function ProjectListItem({
   numPerRow = 3,
   style = {},
 }) {
-  const spacing = 2
   if (!label && !image) {
     return (
       <Box
         flex={`${90 / numPerRow}%`}
-        mr={{ xs: 0, md: spacing }}
-        mb={{ xs: spacing, md: spacing }}
+        mr={{ xs: 0, sm: 2 }}
+        mb={{ xs: 2, sm: 2 }}
       />
     )
   }
   return (
     <Box
       clone
-      flex={{ xs: 1, md: `${90 / numPerRow}%` }}
+      flex={{ xs: 1, sm: `${90 / numPerRow}%` }}
       position="relative"
       bgcolor="gray"
-      mr={{
-        xs: 0,
-        md: index > 0 && (index + 1) % numPerRow === 0 ? 0 : spacing,
-      }}
-      mb={{ xs: spacing, md: spacing }}
       style={{
         backgroundPosition: 'center',
         backgroundSize: 'cover',
-        backgroundImage: image ? `url(${image})` : '',
+        backgroundImage: `url(${require(`../assets/images/${slugify(
+          label
+        ).toLowerCase()}.png`)})`,
+        marginRight: 16,
+        marginBottom: 16,
         ...style,
       }}
     >

@@ -1,8 +1,9 @@
 import React from 'react'
 import { graphql, navigate } from 'gatsby'
 import Layout from '../../components/Layout'
-import data from '../../data/apps'
+import { data } from '../../data/apps'
 import { ProjectList } from '../../components/ProjectList'
+import slugify from 'slugify'
 
 class GamesIndex extends React.Component {
   render() {
@@ -12,7 +13,9 @@ class GamesIndex extends React.Component {
           items={data}
           numPerRow={3}
           onClick={(project, index) =>
-            navigate('/apps/view', { state: { project, data, index } })
+            navigate(`/apps/${slugify(project.title).toLowerCase()}`, {
+              state: { project, data, index },
+            })
           }
         />
       </Layout>
