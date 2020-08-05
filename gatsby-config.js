@@ -3,7 +3,7 @@ module.exports = {
     title: 'Directive Software',
     author: 'Daniel Whiffing',
     description:
-      'GatsbyJS starter for a minimal portfolio website with blog. Suitable for developers.',
+      'Directive Software',
     siteUrl: 'https://directive.software',
   },
   pathPrefix: '/',
