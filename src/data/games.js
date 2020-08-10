@@ -1,5 +1,41 @@
 const data = [
   {
+    title: 'Cleanup 98',
+    website: 'https://dwhiffing.github.io/cleanup98-48',
+    description: `Built With React for Incremental Game Jam 2020.`,
+    year: 2020,
+  },
+  {
+    title: 'Lightcycle',
+    website: 'https://dwhiffing.github.io/lightcycle',
+    description: `Built With Phaser for LOWREZJAM 2020.`,
+    year: 2020,
+  },
+  {
+    title: 'Light Pendulum',
+    website: 'https://dwhiffing.github.io/pendulum-climber',
+    description: `Built With Phaser for ScoreSpace Jam #9.`,
+    year: 2020,
+  },
+  {
+    title: 'Stranger Changer',
+    website: 'https://dwhiffing.github.io/grocer',
+    description: `Built With Phaser for GMTK Jam 2020.`,
+    year: 2020,
+  },
+  {
+    title: 'Quaranteam',
+    website: 'https://dwhiffing.github.io/tojam2020',
+    description: `Built With Phaser For Toronto Game Jam 2020.`,
+    year: 2020,
+  },
+  // {
+  //   title: 'Basketball',
+  //   website: 'https://dwhiffing.github.io/basketball',
+  //   description: `Built With Phaser.`,
+  //   year: 2020,
+  // },
+  {
     title: 'Vagrant',
     website: 'https://dwhiffing.github.io/vagrant',
     description: `Built With Phaser for ODO Jam.`,
