@@ -23,6 +23,7 @@ class Layout extends React.Component {
       <StylesProvider jss={jss}>
         <MuiThemeProvider theme={theme}>
           <Container
+            component="main"
             style={{
               display: 'flex',
               flexDirection: 'column',
@@ -44,6 +45,7 @@ class Layout extends React.Component {
             >
               <Box>
                 <Box
+                  component="header"
                   width="100%"
                   py={4}
                   display="flex"
@@ -58,6 +60,7 @@ class Layout extends React.Component {
 
                   <Box
                     flex={1}
+                    component="nav"
                     minWidth={280}
                     display="flex"
                     justifyContent="space-between"
@@ -75,6 +78,7 @@ class Layout extends React.Component {
                 {children}
               </Box>
               <Box
+                component="footer"
                 display="flex"
                 py={2}
                 style={{
