@@ -1,7 +1,49 @@
 const data = [
   {
+    title: 'Cards Against Luminosity',
+    website: 'https://dwhiffing.github.io/cards-against-luminosity/',
+    description: `Built With React. An incremental card game made for Incremental Jam 2021.`,
+    year: 2021,
+  },
+  {
+    title: 'Online Chess',
+    website: 'https://daniel-chess.herokuapp.com/',
+    description: `Built With React and Colyseus.  A simple heuristic AI.`,
+    year: 2020,
+  },
+  {
+    title: 'Online Deception',
+    website: 'https://daniel-deception.herokuapp.com/',
+    description: `Built With React and Colyseus.  A word based murder mystery game.`,
+    year: 2020,
+  },
+  {
+    title: 'Online Battleship',
+    website: 'https://daniel-battleship.herokuapp.com/',
+    description: `Built With React and Colyseus.  Play with up to 8 players!`,
+    year: 2020,
+  },
+  {
+    title: 'Space Crisis',
+    website: 'https://dwhiffing.github.io/space-crisis',
+    description: `Built With Phaser for Ludum Dare 2020.`,
+    year: 2020,
+  },
+  {
+    title: 'Machine',
+    website: 'https://dwhiffing.github.io/machine',
+    description: `Built With Vanilla JS for JS13K 2020.`,
+    year: 2020,
+  },
+  {
+    title: 'Wild Blue Yonder',
+    website: 'https://dwhiffing.github.io/hexcode-showdown',
+    description: `Built With Phaser for Hexcode Showdown 2020.`,
+    year: 2020,
+  },
+  {
     title: 'Cleanup 98',
-    website: 'https://dwhiffing.github.io/cleanup98-48',
+    website: 'https://dwhiffing.github.io/cleanup98',
     description: `Built With React for Incremental Game Jam 2020.`,
     year: 2020,
   },
