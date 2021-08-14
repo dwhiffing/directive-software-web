@@ -1,5 +1,17 @@
 const data = [
   {
+    title: 'NONOCROSS',
+    website: 'https://dwhiffing.itch.io/nonocross/',
+    description: `Built With Phaser. A puzzle platforming game made for LOW REZ JAM 2021.`,
+    year: 2021,
+  },
+  {
+    title: 'Online Minesweeper',
+    website: 'https://dwhiffing.github.io/sweep/',
+    description: `Built With React/Colyseus. Sweep with friends.`,
+    year: 2021,
+  },
+  {
     title: 'Woodland Annex',
     website: 'https://dwhiffing.itch.io/woodland-annex/',
     description: `Built With Phaser. A simple puzzle game made for GMTK 2021.`,
