@@ -1,13 +1,8 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import get from 'lodash/get'
-
-import profilePic from './../assets/images/avatar.jpeg'
-import bioData from './../data/bio'
 import Layout from '../components/Layout'
-import { rhythm, scale } from '../utils/typography'
-
 import 'typeface-montserrat'
 import 'typeface-merriweather'
 
@@ -25,8 +20,7 @@ class BlogPostTemplate extends React.Component {
           meta={[{ name: 'description', content: siteDescription }]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
-        <Link to="/blog">&larr; Blog</Link>
-        <h1>{post.frontmatter.title}</h1>
+        {/* <h1>{post.frontmatter.title}</h1>
         <br />
         <p
           style={{
@@ -37,9 +31,9 @@ class BlogPostTemplate extends React.Component {
           }}
         >
           {post.frontmatter.date}
-        </p>
+        </p> */}
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
+        {/* <hr
           style={{
             marginBottom: rhythm(1),
           }}
@@ -56,8 +50,8 @@ class BlogPostTemplate extends React.Component {
             }}
           />
           <p>{bioData}</p>
-        </div>
-        <ul
+        </div> */}
+        {/* <ul
           style={{
             display: 'flex',
             flexWrap: 'wrap',
@@ -80,7 +74,7 @@ class BlogPostTemplate extends React.Component {
               </Link>
             )}
           </li>
-        </ul>
+        </ul> */}
       </Layout>
     )
   }

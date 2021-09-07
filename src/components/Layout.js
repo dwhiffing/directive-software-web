@@ -61,13 +61,14 @@ class Layout extends React.Component {
                   <Box
                     flex={1}
                     component="nav"
-                    minWidth={280}
+                    minWidth={400}
                     display="flex"
                     justifyContent="space-between"
                   >
                     <Button onClick={() => navigate('/')}>Home</Button>
                     <Button onClick={() => navigate('/apps/')}>Apps</Button>
                     <Button onClick={() => navigate('/games/')}>Games</Button>
+                    <Button onClick={() => navigate('/resume/')}>Resume</Button>
                     <Button onClick={() => navigate('/contact/')}>
                       Contact
                     </Button>
@@ -88,7 +89,7 @@ class Layout extends React.Component {
                   color: 'gray',
                 }}
               >
-                © DIRECTIVE SOFTWARE | 2020
+                © DIRECTIVE SOFTWARE | {new Date().getFullYear()}
               </Box>
             </Box>
           </Container>
