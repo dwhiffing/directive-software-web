@@ -1,5 +1,11 @@
 const data = [
   {
+    title: 'Star Exploder',
+    website: 'https://js13kgames.com/entries/star-exploder',
+    description: `Built With Kontra.js. A space exploration action game made for JS13k 2021.`,
+    year: 2021,
+  },
+  {
     title: 'NONOCROSS',
     website: 'https://dwhiffing.itch.io/nonocross/',
     description: `Built With Phaser. A puzzle platforming game made for LOW REZ JAM 2021.`,
