@@ -1,5 +1,35 @@
 const data = [
   {
+    title: 'Dungeon Spire',
+    website: 'https://dwhiffing.itch.io/dungeon-spire',
+    description: `Built With Phaser. A deck building tower defense game.`,
+    year: 2022,
+  },
+  {
+    title: 'Roll Tower',
+    website: 'https://dwhiffing.itch.io/roll-tower',
+    description: `Built With Phaser. A dice building RPG.`,
+    year: 2022,
+  },
+  {
+    title: 'Bin It To Win It',
+    website: 'https://dwhiffing.itch.io/bin-it-to-win-it',
+    description: `Built With Phaser. A recycling puzzle game.`,
+    year: 2022,
+  },
+  {
+    title: 'Quintessential',
+    website: 'https://quintessential.fun/',
+    description: `Built With React. A word puzzle game.`,
+    year: 2022,
+  },
+  {
+    title: 'Warloch',
+    website: 'https://dwhiffing.github.io/warloch',
+    description: `Built With Phaser.js. A top down shooter ARPG made for GGJ 2022.`,
+    year: 2022,
+  },
+  {
     title: 'Star Exploder',
     website: 'https://js13kgames.com/entries/star-exploder',
     description: `Built With Kontra.js. A space exploration action game made for JS13k 2021.`,
