@@ -1,5 +1,11 @@
 const data = [
   {
+    title: 'Noxious Nebula',
+    website: 'https://dwhiffing.github.io/noxious-nebula',
+    description: `Built With Kontra.js for JS13k. A top down shooter with flocking enemies.`,
+    year: 2022,
+  },
+  {
     title: 'Dungeon Spire',
     website: 'https://dwhiffing.itch.io/dungeon-spire',
     description: `Built With Phaser. A deck building tower defense game.`,
