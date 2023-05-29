@@ -31,7 +31,6 @@
 <url> <loc>https://directive.software/games/sudoku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://directive.software/games/poker</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://directive.software/games/hexacross</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://directive.software/games/incremental</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://directive.software/games/body-brigade</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://directive.software/games/idle-game</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://directive.software/games/stampede</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
