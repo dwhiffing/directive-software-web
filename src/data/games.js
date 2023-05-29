@@ -191,12 +191,12 @@ const data = [
     description: `Built With Phaser for Global Game Jam 2019.`,
     year: 2019,
   },
-  {
-    title: 'Incremental',
-    website: 'http://dwhiffing.github.io/unfinished-kittens-clone/',
-    description: `Built With React.`,
-    year: 2019,
-  },
+  // {
+  //   title: 'Incremental',
+  //   website: 'http://dwhiffing.github.io/unfinished-kittens-clone/',
+  //   description: `Built With React.`,
+  //   year: 2019,
+  // },
   {
     title: 'Body Brigade',
     website: 'http://dwhiffing.github.io/body-brigade/',
