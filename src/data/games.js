@@ -1,5 +1,17 @@
 const data = [
   {
+    title: 'Lightcrumbs',
+    website: 'https://dwhiffing.itch.io/lightcrumbs',
+    description: `Built With Phaser.js + enable3d for TOJam. A single player horror game.`,
+    year: 2023,
+  },
+  {
+    title: 'Clockwork Harvest',
+    website: 'https://dwhiffing.github.io/clockwork-harvest',
+    description: `Built With Phaser.js. A fast paced gardening game.`,
+    year: 2023,
+  },
+  {
     title: 'Poker Blitz',
     website: 'https://dwhiffing.github.io/poker-blitz',
     description: `Built With Phaser.js for Ludum Dare. A fast paced poker game.`,
