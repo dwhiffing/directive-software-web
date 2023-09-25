@@ -1,5 +1,17 @@
 const data = [
   {
+    title: 'Pocket Space Pinball',
+    website: 'https://dwhiffing.itch.io/pocket-space-pinball',
+    description: `Built With Phaser.js GBJam11. A space themed pinball game.`,
+    year: 2023,
+  },
+  {
+    title: 'The Silk Trail',
+    website: 'https://js13kgames.com/games/the-silk-trail/index.html',
+    description: `Built With Kontra.js for JS13k. A resource management, oregon trail inspired game.`,
+    year: 2023,
+  },
+  {
     title: 'Lightcrumbs',
     website: 'https://dwhiffing.itch.io/lightcrumbs',
     description: `Built With Phaser.js + enable3d for TOJam. A single player horror game.`,
